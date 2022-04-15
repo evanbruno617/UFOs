@@ -68,10 +68,11 @@ function updateFilters() {
   
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-  console.log(filteredData.keys());
+
+var keys = Object.keys(filters)
     
-    for (i in filters){
-      filteredData = filteredData.filter(row => row.city === "bonita");
+    for (i in keys){
+      filteredData = filteredData.filter(row => row[keys[i]] === filters[keys[i]]);
     };
 
     console.log(filteredData)
